@@ -3,9 +3,23 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from io import BytesIO
+import matplotlib.font_manager as fm
+import shutil
 
-#plt.rcParams['font.sans-serif'] = ['SimHei', 'Arial Unicode MS', 'DejaVu Sans','Noto Sans CJK SC', 'WenQuanYi Zen Hei']
-plt.rcParams['font.sans-serif'] = ['DejaVu Sans','Noto Sans CJK SC', 'WenQuanYi Zen Hei']
+# 清除 Matplotlib 字体缓存
+shutil.rmtree(matplotlib.get_cachedir(), ignore_errors=True)
+
+# 重新加载字体
+fm.fontManager.clear()         
+fm._load_fontmanager(try_read_cache=False)
+
+# 设置中文字体
+plt.rcParams['font.sans-serif'] = [
+    'Noto Sans CJK SC', 
+    'WenQuanYi Zen Hei', 
+    'WenQuanYi Micro Hei',
+    'DejaVu Sans'
+]
 plt.rcParams['axes.unicode_minus'] = False
 
 st.set_page_config(page_title="光伏+储能优化模拟器", layout="wide")
