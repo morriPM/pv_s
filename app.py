@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from io import BytesIO
 
-plt.rcParams['font.sans-serif'] = ['SimHei', 'Arial Unicode MS', 'DejaVu Sans']
+plt.rcParams['font.sans-serif'] = ['SimHei', 'Arial Unicode MS', 'DejaVu Sans','Noto Sans CJK SC', 'WenQuanYi Zen Hei']
 plt.rcParams['axes.unicode_minus'] = False
 
 st.set_page_config(page_title="光伏+储能优化模拟器", layout="wide")
