@@ -6,16 +6,8 @@ import matplotlib.pyplot as plt
 from io import BytesIO
 import shutil
 
-# 清除字体缓存
 shutil.rmtree(matplotlib.get_cachedir(), ignore_errors=True)
-
-# 设置中文字体
-plt.rcParams['font.sans-serif'] = [
-    'Noto Sans CJK SC', 
-    'WenQuanYi Zen Hei', 
-    'WenQuanYi Micro Hei',
-    'DejaVu Sans'
-]
+plt.rcParams['font.sans-serif'] = ['Noto Sans CJK SC', 'WenQuanYi Zen Hei', 'WenQuanYi Micro Hei','DejaVu Sans']
 plt.rcParams['axes.unicode_minus'] = False
 
 st.set_page_config(page_title="光伏+储能优化模拟器", layout="wide")
