@@ -4,15 +4,10 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from io import BytesIO
-import matplotlib.font_manager as fm
 import shutil
 
-# 清除 Matplotlib 字体缓存
+# 清除字体缓存
 shutil.rmtree(matplotlib.get_cachedir(), ignore_errors=True)
-
-# 重新加载字体
-fm.fontManager.clear()         
-fm._load_fontmanager(try_read_cache=False)
 
 # 设置中文字体
 plt.rcParams['font.sans-serif'] = [
